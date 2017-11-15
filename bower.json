@@ -29,6 +29,8 @@
 		"angular-messages": "~1.6.6",
 		"angular-material": "~1.1.5",
 		"lodash": "latest",
-		"iso-currency": "0.2.7"
+		"iso-currency": "0.2.7",
+		"itaca-ng-utils": "latest",
+		"itaca-ng-services": "latest"
 	}
 }
