@@ -1,6 +1,6 @@
 {
 	"name": "itaca-ng-filters",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"description": "Various AngularJS filters like chCurrency, utcDate, offsetDate, mask, floor, ceil, abs and many more.",
 	"main": "dist/itaca-ng-filters.js",
 	"repository": {
