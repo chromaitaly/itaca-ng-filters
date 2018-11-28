@@ -24,7 +24,7 @@
 				
 				switch(value.unit){
 					case 'CURRENCY'		: text = chCurrencyFilter(value.count); break;
-					case 'PERCENTAGE'	: text = value.count + '%'; break;
+					case 'PERCENTAGE'	: text = value.count.toFixed(2) + '%'; break;
 					case 'HOURS'		: text += (value.count == 1) ?  translate['date.hour'] : translate['date.hours']; break;
 					case 'DAYS'			: text += (value.count == 1) ?  translate['date.day'] : translate['date.days']; break;
 					case 'NIGHTS'		: text += (value.count == 1) ?  translate['common.night'] : translate['common.nights']; break;
