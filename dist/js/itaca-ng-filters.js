@@ -317,7 +317,7 @@
                     break;
 
                   case "PERCENTAGE":
-                    text = value.count + "%";
+                    text = value.count.toFixed(2) + "%";
                     break;
 
                   case "HOURS":
