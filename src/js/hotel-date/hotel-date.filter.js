@@ -4,22 +4,17 @@
 	angular.module("itaca.filters").filter('hotelDate', HotelDateFilter);
 	
 	/* @ngInject */
-	function HotelDateFilter(offsetDateFilter, DateUtils, AppOptions) {
-		return function(date, format, offsetSeconds) {
-			if (offsetSeconds) {
-				offsetSeconds = Number(offsetSeconds);
-			
-			} else {
+	function HotelDateFilter(dateFilter, AppOptions) {
+		return function(date, format, timeZoneId) {
+			if (!timeZoneId) {
 				if (AppOptions.hotel && AppOptions.hotel.addressInfo && AppOptions.hotel.addressInfo.timeZoneId) {
-					var tz = moment.tz.zone(AppOptions.hotel.addressInfo.timeZoneId);
-					offsetSeconds = tz ? tz.offset(Date.now()) * 60 : AppOptions.defaultOffset;
-
-				} else {
-					offsetSeconds = AppOptions.defaultOffset;
+					timeZoneId = AppOptions.hotel.addressInfo.timeZoneId;
 				}
 			}
 			
-			return offsetDateFilter(date, format, DateUtils.secondsToOffsetString(offsetSeconds));
+			var _date = moment(date).tz(timeZoneId);
+			_date = moment(_date).utcOffset(0,true).local();
+			return dateFilter(_date.toDate(), format);
 		};
 	}
 })();
