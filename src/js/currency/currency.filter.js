@@ -5,7 +5,6 @@
 	
 	/* @ngInject */
 	function CurrencyFilter($filter, iso4217, Currency, AppOptions) {
-		
 		var chCurrency = function(amount, currencyISO, baseCurrencyISO){
 			
 			baseCurrencyISO = baseCurrencyISO || AppOptions.defaultCurrency || "EUR";

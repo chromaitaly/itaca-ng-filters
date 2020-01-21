@@ -29,6 +29,17 @@
 				
 				text += "<span>";
 				
+				if (_.isBoolean(showSign)) {
+					if (showSign) {
+						if (finalAmount > 0) {
+							text += "+"
+						}
+						
+					} else {
+						finalAmount = Math.abs(finalAmount);
+					}
+				}
+				
 				if (type == "PRICE") {
 					text += chCurrencyFilter(finalAmount);
 						
