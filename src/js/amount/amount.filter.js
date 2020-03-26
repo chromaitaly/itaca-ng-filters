@@ -1,11 +1,11 @@
 (function() {
 	'use strict';
 	
-	angular.module("itaca.filters").filter('chAmount', AmountFilter);
+	angular.module("itaca.filter").filter('chAmount', AmountFilter);
 	
 	/* @ngInject */
 	function AmountFilter($sce, chCurrencyFilter) {
-		return function(amount, showDiscount, hideZero) {
+		return function(amount, showDiscount, hideZero, showSign) {
 			var text = null;
 			if (amount) {
 				text = "<span>";
